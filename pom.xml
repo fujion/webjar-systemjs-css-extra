@@ -1,0 +1,63 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.fujion.webjars</groupId>
+		<artifactId>fujion-webjars</artifactId>
+		<version>3.0.0-SNAPSHOT</version>
+	</parent>
+
+	<name>SystemJS v4+ CSS Plugin</name>
+	<artifactId>webjar-systemjs-css-extra</artifactId>
+	<version>1.0.2-SNAPSHOT</version>
+	<description>SystemJS version 4+ CSS plugin.</description>
+
+	<properties>
+		<importmap>
+			imports: {
+				"systemjs-css-extra": "dist/css.js"
+			}
+		</importmap>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>npm-install</id>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>precompile</id>
+						<configuration>
+							<target>
+								<copy tofile="${src.rootdir}/package.json" file="${basedir}/package-template.json">
+									<filterchain>
+										<expandproperties />
+									</filterchain>
+								</copy>
+							</target>
+						</configuration>
+					</execution>
+					<execution>
+						<id>postcompile</id>
+						<configuration>
+							<target>
+								<copy todir="${webjar.target}">
+									<fileset dir="${src.rootdir}/node_modules/systemjs-css-extra" includes="README.md,dist/" />
+								</copy>
+							</target>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
