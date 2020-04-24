@@ -1,0 +1,5 @@
+{
+  "imports": {
+    "systemjs-css-extra": "dist/css.js"
+  }
+}

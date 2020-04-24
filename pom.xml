@@ -12,14 +12,6 @@
 	<version>1.0.2-SNAPSHOT</version>
 	<description>SystemJS version 4+ CSS plugin.</description>
 
-	<properties>
-		<importmap>
-			imports: {
-				"systemjs-css-extra": "dist/css.js"
-			}
-		</importmap>
-	</properties>
-
 	<build>
 		<plugins>
 			<plugin>
