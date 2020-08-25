@@ -4,12 +4,12 @@
 	<parent>
 		<groupId>org.fujion.webjars</groupId>
 		<artifactId>fujion-webjars</artifactId>
-		<version>3.0.0-SNAPSHOT</version>
+		<version>3.0.0</version>
 	</parent>
 
 	<name>SystemJS v4+ CSS Plugin</name>
 	<artifactId>webjar-systemjs-css-extra</artifactId>
-	<version>1.0.2-SNAPSHOT</version>
+	<version>1.0.2</version>
 	<description>SystemJS version 4+ CSS plugin.</description>
 
 	<build>
