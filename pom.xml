@@ -4,25 +4,16 @@
 	<parent>
 		<groupId>org.fujion.webjars</groupId>
 		<artifactId>fujion-webjars</artifactId>
-		<version>3.0.0</version>
+		<version>3.2.0-SNAPSHOT</version>
 	</parent>
 
 	<name>SystemJS v4+ CSS Plugin</name>
 	<artifactId>webjar-systemjs-css-extra</artifactId>
-	<version>1.0.2</version>
+	<version>1.0.2-1</version>
 	<description>SystemJS version 4+ CSS plugin.</description>
 
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>npm-install</id>
-					</execution>
-				</executions>
-			</plugin>
 			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
 				<executions>
