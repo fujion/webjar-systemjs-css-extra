@@ -9,11 +9,31 @@
 
 	<name>SystemJS v4+ CSS Plugin</name>
 	<artifactId>webjar-systemjs-css-extra</artifactId>
-	<version>1.0.2-1</version>
+	<version>1.0.2-1-SNAPSHOT</version>
 	<description>SystemJS version 4+ CSS plugin.</description>
+
+	<properties>
+		<npm-install.skip>false</npm-install.skip>
+	</properties>
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.fujion.webjars</groupId>
+				<artifactId>webjar-validator-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>validate-webjar</id>
+						<configuration>
+							<rules>
+								<rule>file_exists import-map.json</rule>
+								<rule>file_exists README.md</rule>
+								<rule>file_exists dist/css.js</rule>
+							</rules>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
 				<executions>
