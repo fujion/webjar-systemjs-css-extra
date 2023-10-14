@@ -1,6 +1,6 @@
 const {src, dest, series} = require('gulp');
 
-const srcDir = '${src.rootdir}/node_modules/systemjs-css-extra/';
+const srcDir = '${webjar.staging}/node_modules/systemjs-css-extra/';
 const destDir = '${webjar.target}/';
 
 function task1() {
